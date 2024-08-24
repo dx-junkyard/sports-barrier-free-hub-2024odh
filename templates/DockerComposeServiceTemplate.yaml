@@ -1,0 +1,14 @@
+
+  GIT-REPOSITORY-NAME-APP:
+    image: GIT-REPOSITORY-NAME-XXX
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/spohubdb
+      SPRING_DATASOURCE_USERNAME: spohub
+      SPRING_DATASOURCE_PASSWORD: spohub
+    ports:
+      - "PORT-NO-XXX:8080"
+
